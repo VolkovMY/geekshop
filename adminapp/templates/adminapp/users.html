@@ -8,7 +8,7 @@
         новый пользователь
       </a>
     </button>
-    {% for object in objects %}
+    {% for object in object_list %}
       <div
        class="user_record {% if not object.is_active %}not_active{% endif %}">
         <img
@@ -31,7 +31,7 @@
             </a>
           </button>
         </div>
-        <div class="user_name">
+        <p class="user_name">
           <p><strong>{{ object.username }}</strong></p>
         <p>
             {% if object.first_name %}
@@ -40,7 +40,7 @@
                   <p>{{ object.last_name|title }}</p>
                 {% endif %}
             {% endif %}
-          </p>
+
         </div>
         <div class="user_age">
           age:<br>
@@ -56,6 +56,5 @@
         </div>
       </div>
     {% endfor%}
-  </div>
 {% endblock %}
 
